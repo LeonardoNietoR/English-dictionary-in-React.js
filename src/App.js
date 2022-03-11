@@ -1,20 +1,17 @@
-import React, { useEffect, useCallback } from "react";
+import React, { Fragment } from "react";
 import FormDictionary from "./components/FormDictionary/FormDictionary";
+import ResultDisplay from "./components/ResultDisplay/ResultDisplay";
+import ResultProvider from "./store/ResultProvider";
 
 const App = () => {
-   const executeFetch = useCallback(async () => {
-      const results = await fetch(
-         "https://api.dictionaryapi.dev/api/v2/entries/en/get"
-      );
-      const data = await results.json();
-      console.log(data);
-   }, []);
-
-   useEffect(() => {
-      executeFetch();
-   }, [executeFetch]);
-
-   return <FormDictionary />;
+   return (
+      // <Fragment>
+      <ResultProvider>
+         <FormDictionary />
+         <ResultDisplay />
+      </ResultProvider>
+      // </Fragment>
+   );
 };
 
 export default App;
