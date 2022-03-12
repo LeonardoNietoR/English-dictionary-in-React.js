@@ -4,12 +4,11 @@ import classes from "./WordHeader.module.css";
 
 const WordHeader = () => {
    const ctx = useContext(ResultConext);
-   console.log(ctx.resultSearch.phonetics);
 
    const phoneticItems = ctx.resultSearch.phonetics?.map((el) => {
       return (
          <li key={Math.random()}>
-            <span>{el.text}</span>
+            <span className={classes.phonetic}>{el.text}</span>
             <span className={`material-icons ${classes.icon}`}>volume_up</span>
          </li>
       );

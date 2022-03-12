@@ -40,17 +40,20 @@ const FormDictionary = () => {
    };
 
    return (
-      <form onSubmit={submitHandler}>
+      <form className={classes.form} onSubmit={submitHandler}>
          <Input
             ref={inputText}
-            label="Search"
+            label=""
+            className={classes.input}
             input={{
                id: "inputDictionary",
                type: "text",
                placeholder: "Search",
             }}
          />
-         <Button type={"submit"} className={classes.button} />
+         <Button type={"submit"} className={`material-icons ${classes.button}`}>
+            search
+         </Button>
       </form>
    );
 };
