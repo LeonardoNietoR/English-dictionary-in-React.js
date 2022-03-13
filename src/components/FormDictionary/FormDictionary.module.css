@@ -1,17 +1,29 @@
-.form {
+.container {
    width: 75rem;
    height: 10rem;
-   /* background-color: blue; */
    background-color: rgb(68, 119, 202);
-   /* position: absolute; */
    position: fixed;
    top: 0;
    left: 50%;
    transform: translate(-50%);
    display: flex;
-   justify-content: center;
+   justify-content: space-evenly;
    align-items: center;
    z-index: 10;
+}
+
+.container h1 {
+   font-family: var(--font-title-app-3);
+
+   font-size: 6rem;
+   font-weight: 400;
+   color: #eee;
+}
+
+.form {
+   width: auto;
+   background-color: rgb(224, 99, 99);
+   display: flex;
 }
 
 .input {
@@ -20,13 +32,22 @@
    border: none;
    border-radius: 2px 0 0 2px;
    box-shadow: -2px 0 7px rgba(0, 0, 0, 0.312);
+   font-family: var(--font-titles-1);
+   font-size: 1.7rem;
+   padding: 1.6rem;
+   background-color: #fff;
 }
 
 .input:focus {
-   /* box-shadow: -5px 0 7px rgba(229, 122, 15, 0.312); */
-   /* border: 1px solid rgb(209, 106, 37); */
    box-shadow: 0px 0px 15px 5px rgba(56, 54, 54, 0.409);
    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   transition: background-color 5000s ease-in-out 0s;
 }
 
 .button {
@@ -35,8 +56,18 @@
    border: none;
    border-radius: 0 2px 2px 0;
    background-color: rgb(219, 69, 39);
-   font-size: 3rem;
+   font-size: 2.8rem;
    color: #ddd;
-   box-shadow: -2px 0 7px rgba(0, 0, 0, 0.312);
+   box-shadow: 2px 0 7px 0 rgba(0, 0, 0, 0.312);
    cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.button_span {
+   font-size: inherit;
+}
+
+.button:active .button_span {
+   transform: scale(1.1);
 }
