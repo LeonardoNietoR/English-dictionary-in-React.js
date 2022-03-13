@@ -1,33 +1,59 @@
 .container {
    width: 68rem;
-   height: 10rem;
-   /* position: absolute; */
-   /* top: 12rem; */
-   /* left: 50%; */
-   /* transform: translate(-50%); */
-   background-color: #fff;
+   height: 14.5rem;
+   background-color: rgb(199, 245, 245);
    border: 1px solid #bbb;
    margin: 0 auto;
+   padding: 0 1rem;
 }
 
 .container h2 {
-   font-size: 5rem;
-}
-
-.container li .icon {
-   font-size: 2.5rem;
+   font-family: var(--font-titles-1);
+   font-weight: 300;
+   font-size: 7rem;
+   margin-top: 1rem;
+   margin-bottom: 0.3rem;
 }
 
 .container ul {
-   background-color: blueviolet;
+   /* background-color: blueviolet; */
    display: flex;
 }
 
 .container ul li {
    list-style-type: none;
-   background-color: brown;
+   /* background-color: brown; */
+   margin-right: 2rem;
+   display: flex;
+   align-items: center;
+   border: 1px solid rgb(161, 212, 212);
+   padding: 0.3rem;
+}
+
+.container li .abbreviation_code {
+   font-family: var(--font-titles-1);
+   font-size: 2rem;
+}
+
+.container li .button {
+   width: 2.4rem;
+   height: 2.4rem;
+   margin-left: 0.2rem;
+   font-size: 2.5rem;
+   color: #444;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+.container li .button:active .button_span {
+   transform: scale(1.1);
+   color: #000;
 }
 
 .container li .phonetic {
-   font-size: 2rem;
+   margin-left: 0.2rem;
+   font-size: 1.9rem;
+   font-family: var(--font-definitions-2);
+   color: #444;
 }

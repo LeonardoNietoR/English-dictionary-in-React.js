@@ -16,3 +16,6 @@ const App = () => {
 };
 
 export default App;
+
+// Pendongs:
+// 1. Showing "not found message on DOM". HAndling errors.
