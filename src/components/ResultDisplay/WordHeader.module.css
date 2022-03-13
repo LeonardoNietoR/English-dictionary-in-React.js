@@ -1,9 +1,33 @@
 .container {
-   width: 30rem;
+   width: 68rem;
    height: 10rem;
-   background-color: aqua;
+   /* position: absolute; */
+   /* top: 12rem; */
+   /* left: 50%; */
+   /* transform: translate(-50%); */
+   background-color: #fff;
+   border: 1px solid #bbb;
+   margin: 0 auto;
 }
 
-.icon {
-   font-size: 1.8rem;
+.container h2 {
+   font-size: 5rem;
+}
+
+.container li .icon {
+   font-size: 2.5rem;
+}
+
+.container ul {
+   background-color: blueviolet;
+   display: flex;
+}
+
+.container ul li {
+   list-style-type: none;
+   background-color: brown;
+}
+
+.container li .phonetic {
+   font-size: 2rem;
 }

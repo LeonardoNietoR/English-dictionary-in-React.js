@@ -1,0 +1,9 @@
+.container {
+   /* min-width: 70%; */
+   max-width: 75rem;
+   height: fit-content;
+   background-color: rgb(197, 134, 134);
+   /* background-color: #fff; */
+   margin: 0 auto;
+   position: relative;
+}

@@ -6,8 +6,6 @@ const ResultProvider = (props) => {
 
    // func: the "data" comes from fetch().
    const setDataToBeRendered = (data) => {
-      console.log(data);
-
       const word = data.word;
       const definitions = {};
       const synonymsAntonyms = { synonyms: [], antonyms: [] };
