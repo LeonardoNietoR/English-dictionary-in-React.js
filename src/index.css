@@ -1,3 +1,9 @@
+:root {
+   --font-titles-1: "Roboto", sans-serif;
+   --font-definitions-1: "Cardo", serif;
+   --font-definitions-2: "Times New Roman", Times, serif;
+}
+
 *,
 *::after,
 *::before {
