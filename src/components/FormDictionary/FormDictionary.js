@@ -25,6 +25,7 @@ const FormDictionary = () => {
 
          const [data] = await results.json();
          ctx.changeResult(data);
+         inputText.current.value = "";
       } catch (err) {
          console.log(err);
       }

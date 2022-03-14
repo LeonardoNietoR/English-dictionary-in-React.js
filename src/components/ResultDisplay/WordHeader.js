@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import ResultConext from "../../store/result-context";
 import classes from "./WordHeader.module.css";
+import SelectTypeResult from "./SelectTypeResult";
 import Button from "../UI/Button";
 
-const WordHeader = () => {
+const WordHeader = (props) => {
    const ctx = useContext(ResultConext);
    console.log(ctx.resultSearch);
 
@@ -45,7 +46,10 @@ const WordHeader = () => {
    return (
       <div className={classes.container}>
          <h2>{ctx.resultSearch.word}</h2>
-         <ul>{phoneticItems}</ul>
+         <div className={classes.container_phonetics}>
+            <ul>{phoneticItems}</ul>
+            <SelectTypeResult onSelectTypeResult={props.onSelectTypeResult} />
+         </div>
       </div>
    );
 };
