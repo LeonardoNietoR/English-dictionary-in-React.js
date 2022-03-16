@@ -2,15 +2,11 @@
    width: 68rem;
    min-height: 30rem;
    margin: 0 auto;
+
    background-color: #fff;
    border-left: 1px solid #bbb;
    border-right: 1px solid #bbb;
    border-bottom: 1px solid #bbb;
-   padding: 0 1rem;
-}
-
-.block_partOfSpeech {
-   padding: 0.8rem 0 1.2rem 0;
 }
 
 .container h3 {
@@ -21,40 +17,25 @@
    margin-bottom: 1rem;
 }
 
-.definition_text {
+.text {
    font-family: var(--font-titles-1);
    font-weight: 300;
    font-size: 1.7rem;
    color: var(--color-text-definition);
+   margin-left: 3rem;
+   box-decoration-break: clone;
 }
 
-.example_text {
-   font-family: var(--font-titles-1);
-   font-weight: 300;
-   font-size: 1.5rem;
-   font-style: italic;
-   color: rgb(13, 13, 197);
-   display: block;
+.container li:nth-child(1) {
+   padding: 3rem 2.3rem;
 }
 
 .container li {
-   padding: 0.15rem 2.2rem;
    position: relative;
-   margin: 0 2.3rem;
+   padding: 0 2.3rem;
    line-height: 1.9rem;
 }
 
-ol {
+ul {
    list-style-type: none;
-   counter-reset: list;
-}
-
-.container li::before {
-   width: 2.2rem;
-   display: inline-block;
-   counter-increment: list;
-   content: counters(list, ". ") ". ";
-   font-size: 1.4rem;
-   position: absolute;
-   left: 0;
 }

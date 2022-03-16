@@ -1,0 +1,11 @@
+.select {
+   padding: 0 2rem;
+   font-family: var(--font-titles-1);
+   color: #444;
+   border-color: #aaa;
+}
+
+.select:focus {
+   /* border: none; */
+   outline-color: #aaa;
+}

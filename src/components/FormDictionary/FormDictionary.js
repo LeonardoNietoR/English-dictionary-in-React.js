@@ -20,11 +20,13 @@ const FormDictionary = () => {
          const results = await fetch(
             `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
          );
+         console.log(results);
 
          if (!results.ok) throw new Error("no found");
 
          const [data] = await results.json();
          ctx.changeResult(data);
+         inputText.current.value = "";
       } catch (err) {
          console.log(err);
       }

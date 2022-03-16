@@ -1,8 +1,10 @@
 .container {
    /* min-width: 70%; */
    max-width: 75rem;
+   min-height: 100vh;
    height: auto;
    /* background-color: rgb(197, 134, 134); */
    background-color: #fff;
    margin: 10rem auto 0 auto;
+   padding-bottom: 5rem;
 }

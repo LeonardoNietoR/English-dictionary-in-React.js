@@ -1,6 +1,6 @@
 .container {
    width: 68rem;
-   height: 14.5rem;
+   height: 15rem;
    background-color: rgb(199, 245, 245);
    border: 1px solid #bbb;
    margin: 0 auto;
@@ -11,8 +11,13 @@
    font-family: var(--font-titles-1);
    font-weight: 300;
    font-size: 7rem;
-   margin-top: 1rem;
-   margin-bottom: 0.3rem;
+   margin-top: 1.5rem;
+   margin-bottom: 0.7rem;
+}
+
+.container_phonetics {
+   display: flex;
+   justify-content: space-between;
 }
 
 .container ul {
