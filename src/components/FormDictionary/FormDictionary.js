@@ -20,6 +20,7 @@ const FormDictionary = () => {
          const results = await fetch(
             `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
          );
+         console.log(results);
 
          if (!results.ok) throw new Error("no found");
 
