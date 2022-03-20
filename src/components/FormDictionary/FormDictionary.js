@@ -47,26 +47,28 @@ const FormDictionary = () => {
 
    return (
       <div className={classes.header}>
-         <div className={classes.container_h1}>
-            <h1>Dictionary</h1>
+         <div className={classes.container_h1_form}>
+            <div className={classes.container_h1}>
+               <h1>Dictionary</h1>
+            </div>
+            <form className={classes.form} onSubmit={submitHandler}>
+               <Input
+                  ref={inputText}
+                  label=""
+                  className={classes.input}
+                  input={{
+                     id: "inputDictionary",
+                     type: "text",
+                     placeholder: "Search",
+                  }}
+               />
+               <Button type={"submit"} className={classes.button}>
+                  <span className={`material-icons ${classes.button_span}`}>
+                     search
+                  </span>
+               </Button>
+            </form>
          </div>
-         <form className={classes.form} onSubmit={submitHandler}>
-            <Input
-               ref={inputText}
-               label=""
-               className={classes.input}
-               input={{
-                  id: "inputDictionary",
-                  type: "text",
-                  placeholder: "Search",
-               }}
-            />
-            <Button type={"submit"} className={classes.button}>
-               <span className={`material-icons ${classes.button_span}`}>
-                  search
-               </span>
-            </Button>
-         </form>
       </div>
    );
 };

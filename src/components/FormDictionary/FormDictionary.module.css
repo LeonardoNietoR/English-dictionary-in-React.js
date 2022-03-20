@@ -12,6 +12,16 @@
    z-index: 10;
 }
 
+.container_h1_form {
+   width: 60rem;
+   height: 4.8rem;
+   background-color: rgb(45, 79, 133);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+}
+
 .container_h1 {
    height: 5rem;
    width: auto;
