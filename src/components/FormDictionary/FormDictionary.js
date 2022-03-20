@@ -12,6 +12,8 @@ import ResultConext from "../../store/result-context";
 
 const FormDictionary = () => {
    const [inputValue, setInputValue] = useState("run");
+   const [error, setError] = useState({});
+
    const inputText = useRef();
    const ctx = useContext(ResultConext);
 
@@ -22,13 +24,15 @@ const FormDictionary = () => {
          );
          console.log(results);
 
-         if (!results.ok) throw new Error("no found");
+         if (!results.ok) {
+            throw new Error(`Sorry, no results found for ${inputValue}`);
+         }
 
          const [data] = await results.json();
          ctx.changeResult(data);
          inputText.current.value = "";
       } catch (err) {
-         console.log(err);
+         ctx.changeResult(null, err.message);
       }
    }, [inputValue]);
 
@@ -42,8 +46,10 @@ const FormDictionary = () => {
    };
 
    return (
-      <div className={classes.container}>
-         <h1>Dictionary</h1>
+      <div className={classes.header}>
+         <div className={classes.container_h1}>
+            <h1>Dictionary</h1>
+         </div>
          <form className={classes.form} onSubmit={submitHandler}>
             <Input
                ref={inputText}

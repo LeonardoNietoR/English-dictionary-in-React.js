@@ -1,8 +1,8 @@
 .container {
-   width: 68rem;
+   width: var(--width-container-result);
    height: 15rem;
    background-color: rgb(199, 245, 245);
-   border: 1px solid #bbb;
+   border: 1px solid var(--color-border-definition);
    margin: 0 auto;
    padding: 0 1rem;
 }

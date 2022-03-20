@@ -7,20 +7,42 @@ import classes from "./ResultDisplay.module.css";
 
 const ResultDisplay = () => {
    const [showDefinition, setShowDefinition] = useState(true);
-   // const ctx = useContext(ResultConext);
+   const ctx = useContext(ResultConext);
 
-   const selectTypeResultHandler = (result) => {
-      if (result === "definition") {
-         setShowDefinition(true);
-      } else {
-         setShowDefinition(false);
+   const chooseDefinitionOrSynonymHandler = (result) => {
+      result === "definition"
+         ? setShowDefinition(true)
+         : setShowDefinition(false);
+   };
+
+   const displayWord = (
+      <div>
+         <WordHeader onSelectTypeResult={chooseDefinitionOrSynonymHandler} />
+         {showDefinition ? <WordDefinition /> : <WordSynonym />}
+      </div>
+   );
+
+   const setErrorMessage = (err) => {
+      if (err) {
+         const arrayErrorMessage = err.split(" ");
+         const wordNotFound = arrayErrorMessage.pop();
+         const message = arrayErrorMessage.join(" ");
+
+         return (
+            <div className={classes.container_error}>
+               <p className={classes.error}>
+                  {message} <span>{wordNotFound}</span>
+               </p>
+            </div>
+         );
       }
    };
 
+   const displayError = setErrorMessage(ctx.error);
+
    return (
       <div className={classes.container}>
-         <WordHeader onSelectTypeResult={selectTypeResultHandler} />
-         {showDefinition ? <WordDefinition /> : <WordSynonym />}
+         {ctx.error ? displayError : displayWord}
       </div>
    );
 };

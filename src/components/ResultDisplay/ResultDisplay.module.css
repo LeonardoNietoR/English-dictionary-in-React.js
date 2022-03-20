@@ -1,10 +1,29 @@
 .container {
-   /* min-width: 70%; */
    max-width: 75rem;
    min-height: 100vh;
    height: auto;
-   /* background-color: rgb(197, 134, 134); */
    background-color: #fff;
+   /* background-color: green; */
    margin: 10rem auto 0 auto;
    padding-bottom: 5rem;
+}
+
+.container_error {
+   width: var(--width-container-result);
+   min-height: 30rem;
+   margin: 0 auto;
+   border: 1px solid var(--color-border-definition);
+}
+
+.error {
+   text-align: center;
+   font-family: var(--font-definitions-2);
+   font-size: 3rem;
+   margin-top: 12rem;
+   /* padding-top: 10rem; */
+}
+
+.error span {
+   font-style: italic;
+   color: var(--color-text-definition);
 }

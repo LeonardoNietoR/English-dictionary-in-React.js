@@ -3,9 +3,17 @@ import ResultConext from "./result-context";
 
 const ResultProvider = (props) => {
    const [finalDataObject, setFinalDataObject] = useState({});
+   const [error, setError] = useState(null);
 
    // func: the "data" comes from fetch().
-   const setDataToBeRendered = (data) => {
+   const setDataToBeRendered = (data, errorMessage = null) => {
+      if (errorMessage) {
+         setError(errorMessage);
+         return;
+      }
+
+      setError(errorMessage);
+
       const word = data.word;
       const definitions = {};
       const synonymsAntonyms = { synonyms: [], antonyms: [] };
@@ -45,6 +53,7 @@ const ResultProvider = (props) => {
    const resultContext = {
       resultSearch: finalDataObject,
       changeResult: setDataToBeRendered,
+      error,
    };
    return (
       <ResultConext.Provider value={resultContext}>

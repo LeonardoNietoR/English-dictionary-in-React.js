@@ -6,7 +6,11 @@
    --font-title-app-2: "Cormorant SC", serif;
    --font-title-app-3: "Tangerine", cursive;
 
+   --color-background-header: rgb(52, 92, 158);
    --color-text-definition: rgb(120, 14, 14);
+   --color-border-definition: #bbb;
+
+   --width-container-result: 68rem;
 }
 
 *,
