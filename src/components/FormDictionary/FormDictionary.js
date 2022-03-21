@@ -10,11 +10,12 @@ import Button from "../UI/Button";
 import classes from "./FormDictionary.module.css";
 import ResultConext from "../../store/result-context";
 
-const FormDictionary = () => {
-   const [inputValue, setInputValue] = useState("run");
-   const [error, setError] = useState({});
+const FormDictionary = (props) => {
+   const [inputValue, setInputValue] = useState("");
 
-   const inputText = useRef();
+   const input = useRef();
+   console.log(input.current);
+
    const ctx = useContext(ResultConext);
 
    const AJAXCall = useCallback(async () => {
@@ -22,7 +23,6 @@ const FormDictionary = () => {
          const results = await fetch(
             `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
          );
-         console.log(results);
 
          if (!results.ok) {
             throw new Error(`Sorry, no results found for ${inputValue}`);
@@ -30,7 +30,8 @@ const FormDictionary = () => {
 
          const [data] = await results.json();
          ctx.changeResult(data);
-         inputText.current.value = "";
+         input.current.value = "";
+         input.current.blur();
       } catch (err) {
          ctx.changeResult(null, err.message);
       }
@@ -42,18 +43,29 @@ const FormDictionary = () => {
 
    const submitHandler = (e) => {
       e.preventDefault();
-      setInputValue(inputText.current.value);
+      if (input.current.value.length > 1) {
+         setInputValue(input.current.value);
+         props.onSubmit();
+      }
    };
 
    return (
-      <div className={classes.header}>
-         <div className={classes.container_h1_form}>
-            <div className={classes.container_h1}>
-               <h1>Dictionary</h1>
+      <div className={`${classes.header} ${props.className.header}`}>
+         <div
+            className={`${classes.container_h1_form} ${props.className.container_h1_form}`}
+         >
+            <div
+               className={`${classes.container_h1} ${props.className.container_h1}`}
+            >
+               <h1>Az Dictionary</h1>
+               <span>
+                  Welcome to Az-Dictionary. Find English definitions, idioms,
+                  pronunciations, synonyms and antonyms.
+               </span>
             </div>
             <form className={classes.form} onSubmit={submitHandler}>
                <Input
-                  ref={inputText}
+                  ref={input}
                   label=""
                   className={classes.input}
                   input={{

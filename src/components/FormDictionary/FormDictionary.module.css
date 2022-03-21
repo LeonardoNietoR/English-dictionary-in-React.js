@@ -13,7 +13,7 @@
 }
 
 .container_h1_form {
-   width: 60rem;
+   width: 65rem;
    height: 4.8rem;
    background-color: rgb(45, 79, 133);
    display: flex;
@@ -34,6 +34,10 @@
    font-family: var(--font-title-app-3);
    color: #eee;
    padding: 0 2rem;
+}
+
+.container_h1 span {
+   display: none;
 }
 
 .form {
