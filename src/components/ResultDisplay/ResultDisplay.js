@@ -3,6 +3,7 @@ import ResultConext from "../../store/result-context";
 import WordHeader from "./WordHeader";
 import WordDefinition from "./WordDefinition";
 import WordSynonym from "./WordSynonym";
+import Spinner from "../UI/Spinner";
 import classes from "./ResultDisplay.module.css";
 
 const ResultDisplay = () => {
@@ -39,23 +40,13 @@ const ResultDisplay = () => {
    };
 
    const displayError = setErrorMessage(ctx.error);
-   const displayLoading = <p className={classes.isLoading}>loading...</p>;
+   const displayLoading = <Spinner className={classes.isLoading} />;
 
-   let content;
-   if (ctx.isLoading) {
-      content = displayLoading;
-   } else if (ctx.error && !ctx.isLoading) {
-      content = displayError;
-   } else {
-      content = displayWord;
-   }
+   let content = displayWord;
+   if (ctx.isLoading) content = displayLoading;
+   if (ctx.error && !ctx.isLoading) content = displayError;
 
-   return (
-      <div className={classes.container}>
-         {/* {ctx.error ? displayError : displayWord} */}
-         {content}
-      </div>
-   );
+   return <div className={classes.container}>{content}</div>;
 };
 
 export default ResultDisplay;

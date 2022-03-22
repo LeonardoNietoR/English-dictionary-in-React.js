@@ -51,8 +51,7 @@ const ResultProvider = (props) => {
       setFinalDataObject({ word, phonetics, definitions, synonymsAntonyms });
    };
 
-   const loading = (bool) => setIsLoading(bool);
-   
+   const loading = (status) => setIsLoading(status);
 
    const resultContext = {
       resultSearch: finalDataObject,

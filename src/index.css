@@ -9,6 +9,7 @@
    --color-background-header: rgb(52, 92, 158);
    --color-text-definition: rgb(120, 14, 14);
    --color-border-definition: #bbb;
+   --color-spinner: rgb(127, 185, 233);
 
    --width-container-result: 68rem;
 }
