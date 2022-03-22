@@ -4,6 +4,7 @@ import ResultConext from "./result-context";
 const ResultProvider = (props) => {
    const [finalDataObject, setFinalDataObject] = useState({});
    const [error, setError] = useState(null);
+   const [isLoading, setIsLoading] = useState(false);
 
    // func: the "data" comes from fetch().
    const setDataToBeRendered = (data, errorMessage = null) => {
@@ -50,10 +51,15 @@ const ResultProvider = (props) => {
       setFinalDataObject({ word, phonetics, definitions, synonymsAntonyms });
    };
 
+   const loading = (bool) => setIsLoading(bool);
+   
+
    const resultContext = {
       resultSearch: finalDataObject,
       changeResult: setDataToBeRendered,
       error,
+      isLoading,
+      setIsLoading: loading,
    };
    return (
       <ResultConext.Provider value={resultContext}>

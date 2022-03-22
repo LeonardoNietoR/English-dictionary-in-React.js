@@ -39,10 +39,21 @@ const ResultDisplay = () => {
    };
 
    const displayError = setErrorMessage(ctx.error);
+   const displayLoading = <p className={classes.isLoading}>loading...</p>;
+
+   let content;
+   if (ctx.isLoading) {
+      content = displayLoading;
+   } else if (ctx.error && !ctx.isLoading) {
+      content = displayError;
+   } else {
+      content = displayWord;
+   }
 
    return (
       <div className={classes.container}>
-         {ctx.error ? displayError : displayWord}
+         {/* {ctx.error ? displayError : displayWord} */}
+         {content}
       </div>
    );
 };

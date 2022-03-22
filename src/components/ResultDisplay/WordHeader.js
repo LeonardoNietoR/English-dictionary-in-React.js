@@ -6,7 +6,6 @@ import Button from "../UI/Button";
 
 const WordHeader = (props) => {
    const ctx = useContext(ResultConext);
-   console.log(ctx.resultSearch);
 
    const phoneticItems = ctx.resultSearch.phonetics?.map((el) => {
       const linkAudio = el.audio;

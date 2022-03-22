@@ -14,11 +14,11 @@ const FormDictionary = (props) => {
    const [inputValue, setInputValue] = useState("");
 
    const input = useRef();
-   console.log(input.current);
 
    const ctx = useContext(ResultConext);
 
    const AJAXCall = useCallback(async () => {
+      ctx.setIsLoading(true);
       try {
          const results = await fetch(
             `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
@@ -35,6 +35,7 @@ const FormDictionary = (props) => {
       } catch (err) {
          ctx.changeResult(null, err.message);
       }
+      ctx.setIsLoading(false);
    }, [inputValue]);
 
    useEffect(() => {
@@ -43,7 +44,7 @@ const FormDictionary = (props) => {
 
    const submitHandler = (e) => {
       e.preventDefault();
-      if (input.current.value.length > 1) {
+      if (input.current.value.trim().length > 0) {
          setInputValue(input.current.value);
          props.onSubmit();
       }

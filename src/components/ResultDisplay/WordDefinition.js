@@ -4,7 +4,6 @@ import classes from "./WordDefinition.module.css";
 
 const WordDefinition = () => {
    const ctx = useContext(ResultConext);
-   console.log(ctx.resultSearch.definitions);
 
    const { definitions } = ctx.resultSearch;
 
