@@ -11,7 +11,7 @@ import classes from "./FormDictionary.module.css";
 import ResultConext from "../../store/result-context";
 
 const FormDictionary = (props) => {
-   const [inputValue, setInputValue] = useState("");
+   const [inputValue, setInputValue] = useState();
 
    const input = useRef();
 

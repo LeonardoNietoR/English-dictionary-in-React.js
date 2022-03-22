@@ -34,4 +34,3 @@ export default App;
 
 // Pendings:
 // 1. Showing "not found message on DOM". HAndling errors. For definitions and for synonyms.
-// 2. clear input

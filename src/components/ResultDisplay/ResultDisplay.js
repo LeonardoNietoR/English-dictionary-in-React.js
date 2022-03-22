@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ResultConext from "../../store/result-context";
 import WordHeader from "./WordHeader";
 import WordDefinition from "./WordDefinition";
@@ -15,6 +15,10 @@ const ResultDisplay = () => {
          ? setShowDefinition(true)
          : setShowDefinition(false);
    };
+
+   useEffect(() => {
+      setShowDefinition(true);
+   }, [ctx.resultSearch.word]);
 
    const displayWord = (
       <div>
