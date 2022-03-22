@@ -30,7 +30,6 @@ const ResultProvider = (props) => {
             return {
                definition: item.definition,
                example: item.example || "",
-               // synonyms: item.synonyms.length > 0 ? item.synonyms : "",
             };
          });
       };

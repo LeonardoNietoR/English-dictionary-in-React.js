@@ -6,6 +6,5 @@
 }
 
 .select:focus {
-   /* border: none; */
    outline-color: #aaa;
 }

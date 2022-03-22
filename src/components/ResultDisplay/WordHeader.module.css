@@ -21,13 +21,11 @@
 }
 
 .container ul {
-   /* background-color: blueviolet; */
    display: flex;
 }
 
 .container ul li {
    list-style-type: none;
-   /* background-color: brown; */
    margin-right: 2rem;
    display: flex;
    align-items: center;
