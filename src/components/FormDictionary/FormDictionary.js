@@ -64,7 +64,11 @@ const FormDictionary = (props) => {
                   pronunciations, synonyms and antonyms.
                </span>
             </div>
-            <form className={classes.form} onSubmit={submitHandler}>
+            <form
+               className={classes.form}
+               onSubmit={submitHandler}
+               autoComplete="off"
+            >
                <Input
                   ref={input}
                   label=""
