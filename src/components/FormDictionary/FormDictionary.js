@@ -36,7 +36,7 @@ const FormDictionary = (props) => {
          ctx.changeResult(null, err.message);
       }
       ctx.setIsLoading(false);
-   }, [inputValue]);
+   }, [inputValue, ctx]);
 
    useEffect(() => {
       AJAXCall();
