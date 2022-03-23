@@ -38,6 +38,8 @@ const FormDictionary = (props) => {
       ctx.setIsLoading(false);
    }, [inputValue]);
 
+   console.log("test1");
+
    useEffect(() => {
       AJAXCall();
    }, [AJAXCall]);
