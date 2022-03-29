@@ -1,10 +1,10 @@
-# Az-dictionary
+# English-dictionary project in React.js
 
 ## Description
 
-This is an English dictionary to find definitions, idioms, pronuntiations, synonyms and antonyms. Developed in React.js.
+Code repository for an English dictionary that allows to find definitions, idioms, pronuntiations, synonyms and antonyms. Developed in React.js.
 
-[Live Site](https://az-dictionary.netlify.app/)
+**[Live Site](https://az-dictionary.netlify.app/)**
 
 ![az-dictionary](./Img/Dictionary%20image.png)
 
